@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#e9e1d1">
     <title>2048</title>
+    <meta name="description" content="2048: сложи плитки, отмени ход и запиши рекорд">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,14 +40,15 @@
         <p id="storage-note" class="storage-note" hidden></p>
 
         <details class="rules">
-            <summary>Как считаются очки</summary>
-            <p>За ход суммируются значения плиток, которые получились при слиянии.</p>
-            <p>4&nbsp;4&nbsp;0&nbsp;0 влево становится 8. Это +8.</p>
-            <p>2&nbsp;2&nbsp;2&nbsp;2 влево становится 8. Это +4, +4 и ещё +8, всего +16.</p>
-            <p>4&nbsp;4&nbsp;4&nbsp;4 влево становится 16. Это +8, +8 и +16, всего +32.</p>
+          <summary>Как считаются очки</summary>
+          <p>За ход суммируются значения плиток, которые получились при слиянии.</p>
+          <p>4&nbsp;4&nbsp;0&nbsp;0 влево становится 8. Это +8.</p>
+          <p>2&nbsp;2&nbsp;2&nbsp;2 влево становится 8. Это +4, +4 и ещё +8, всего +16.</p>
+          <p>4&nbsp;4&nbsp;4&nbsp;4 влево становится 16. Это +8, +8 и +16, всего +32.</p>
         </details>
-    </section>
-    <section class="stage">
+      </section>
+
+      <section class="stage">
         <h2 class="sr-only">Игровое поле</h2>
         <div id="board" class="board">
           <div id="grid" class="grid"></div>
@@ -67,26 +69,30 @@
         </div>
 
         <div class="dpad" id="dpad" aria-label="Управление">
-            <button type="button" data-dir="up" aria-label="Вверх">↑</button>
-            <button type="button" data-dir="left" aria-label="Влево">←</button>
-            <button type="button" data-dir="down" aria-label="Вниз">↓</button>
-            <button type="button" data-dir="right" aria-label="Вправо">→</button>
+          <button type="button" data-dir="up" aria-label="Вверх">↑</button>
+          <button type="button" data-dir="left" aria-label="Влево">←</button>
+          <button type="button" data-dir="down" aria-label="Вниз">↓</button>
+          <button type="button" data-dir="right" aria-label="Вправо">→</button>
         </div>
-    </section>
+      </section>
     </main>
 
     <div id="leaders" class="modal" hidden>
-        <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="leaders-title">
-          <header class="modal__head">
-            <h2 id="leaders-title">Рекорды</h2>
-            <button type="button" id="close-leaders" class="icon-btn" aria-label="Закрыть">×</button>
-          </header>
-          <div id="leaders-body"></div>
-        </div>
+      <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="leaders-title">
+        <header class="modal__head">
+          <h2 id="leaders-title">Рекорды</h2>
+          <button type="button" id="close-leaders" class="icon-btn" aria-label="Закрыть">×</button>
+        </header>
+        <div id="leaders-body"></div>
+      </div>
     </div>
 
-    <script src="js/logic.js"></script>
-    <script src="js/storage.js"></script>
-    <script src="js/ui.js"></script>
+    <noscript>
+      <p class="noscript">Для игры нужен JavaScript.</p>
+    </noscript>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="logic.js"></script>
+    <script src="ui.js"></script>
   </body>
 </html>
