@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e9e1d1">
+    <title>2048</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <header class="top">
+          <div class="brand">
+            <h1><span>2</span>048</h1>
+            <p class="lede">Двигайте плитки. Одинаковые сливаются, и новое число может слиться ещё раз в том же ходу.</p>
+          </div>
+          <div class="scores">
+            <p class="score score--current">
+              <span>Счёт</span>
+              <strong id="score">0</strong>
+            </p>
+            <p class="score">
+              <span>Лучший</span>
+              <strong id="best">0</strong>
+            </p>
+          </div>
+        </header>
+
+        <div class="toolbar">
+          <button type="button" id="restart" class="btn btn--primary">Начать заново</button>
+          <button type="button" id="undo" class="btn" disabled>Отмена хода</button>
+          <button type="button" id="open-leaders" class="btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="leaders">Рекорды</button>
+        </div>
+        <p id="storage-note" class="storage-note" hidden></p>
+
+        <details class="rules">
+            <summary>Как считаются очки</summary>
+            <p>За ход суммируются значения плиток, которые получились при слиянии.</p>
+            <p>4&nbsp;4&nbsp;0&nbsp;0 влево становится 8. Это +8.</p>
+            <p>2&nbsp;2&nbsp;2&nbsp;2 влево становится 8. Это +4, +4 и ещё +8, всего +16.</p>
+            <p>4&nbsp;4&nbsp;4&nbsp;4 влево становится 16. Это +8, +8 и +16, всего +32.</p>
+        </details>
+    </section>
+    <section class="stage">
+        <h2 class="sr-only">Игровое поле</h2>
+        <div id="board" class="board">
+          <div id="grid" class="grid"></div>
+          <div id="tiles" class="tiles" aria-hidden="true"></div>
+          <div id="overlay" class="overlay" hidden>
+            <div class="sheet">
+              <p id="overlay-message" class="sheet__message" role="status">Ходов больше нет</p>
+              <p id="overlay-score" class="sheet__score"></p>
+              <form id="save-form">
+                <label for="player-name">Имя</label>
+                <input id="player-name" name="name" maxlength="20" autocomplete="nickname" placeholder="Как записать рекорд" required>
+                <p id="save-error" class="form-error" hidden></p>
+                <button type="submit" class="btn btn--primary">Сохранить результат</button>
+              </form>
+              <button type="button" id="overlay-restart" class="btn btn--ghost">Начать заново</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dpad" id="dpad" aria-label="Управление">
+            <button type="button" data-dir="up" aria-label="Вверх">↑</button>
+            <button type="button" data-dir="left" aria-label="Влево">←</button>
+            <button type="button" data-dir="down" aria-label="Вниз">↓</button>
+            <button type="button" data-dir="right" aria-label="Вправо">→</button>
+        </div>
+    </section>
+    </main>
+
+    <script src="js/logic.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>
