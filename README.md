@@ -27,7 +27,11 @@
 4) Управление зависит от экрана: широком окне (ноут или комп) ход делают стрелки клавиатуры, на узком и на сенсорном экране (телефон) появляются четыре кнопки и работает свайп по полю
 
 Использовала:
+
 https://learn.javascript.ru/localstorage
+
 https://mateuszsokola.github.io/2048-in-react/ - как референс, только поменяла визуал и расположение блоков (текст и сама плитка)
+
 https://learn.javascript.ru/array-methods
+
 https://css-tricks.com/complete-guide-css-grid-layout/
