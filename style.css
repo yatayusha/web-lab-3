@@ -650,11 +650,47 @@ body.is-modal {
     .dpad {
       margin-top: 0.35rem;
     }
-  }
+}
   
-  @media (max-width: 1080px), (pointer: coarse) {
+@media (max-width: 1080px), (pointer: coarse) {
     body:not(.is-blocked) .dpad {
       display: grid;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .tile,
+    .tile__face,
+    .gain {
+      animation: none !important;
+      transition: none !important;
+    }
+}
+  
+@keyframes appear {
+    from {
+      transform: scale(0.55);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+  
+@keyframes pop {
+    0% { transform: scale(1); }
+    45% { transform: scale(1.16); }
+    100% { transform: scale(1); }
+}
+  
+@keyframes float-up {
+    from {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate(-50%, -22px);
+      opacity: 0;
+    }
+}
