@@ -297,3 +297,109 @@ h1 span {
   font-size: clamp(1.35rem, 5.5vw, 2rem);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
+
+.tile[data-digits="3"] .tile__face {
+    font-size: clamp(1.1rem, 4.6vw, 1.55rem);
+}
+  
+.tile[data-digits="4"] .tile__face {
+    font-size: clamp(0.92rem, 3.8vw, 1.2rem);
+}
+  
+.tile[data-digits="5"] .tile__face,
+.tile[data-digits="6"] .tile__face {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+}
+  
+.tile--new .tile__face {
+    animation: appear 180ms ease;
+}
+  
+.tile--pop .tile__face {
+    animation: pop 200ms ease;
+}
+
+.tile--2 .tile__face { background: #f3efe4; color: #3f382f; }
+.tile--4 .tile__face { background: #efe0c4; color: #3f382f; }
+.tile--8 .tile__face { background: #f0a05a; color: #3d2912; }
+.tile--16 .tile__face { background: #ee7a3a; color: #3a1e0c; }
+.tile--32 .tile__face { background: #e85d4c; color: #fff8f6; }
+.tile--64 .tile__face { background: #d63a4a; color: #fff7f8; }
+.tile--128 .tile__face { background: #c42d6a; color: #fff7fa; }
+.tile--256 .tile__face { background: #8d3ec4; color: #fff8ff; }
+.tile--512 .tile__face { background: #4d5bdb; color: #f6f7ff; }
+.tile--1024 .tile__face { background: #2a8fdb; color: #f4f9ff; }
+
+.tile--2048 .tile__face {
+  background: #12b5a4;
+  color: #06221e;
+  box-shadow: 0 0 0 3px #f0c14b, 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.tile--4096 .tile__face { background: #e6b325; color: #2b2108; }
+.tile--8192 .tile__face { background: #f2de6b; color: #2b2108; }
+.tile--super .tile__face { background: #f7e7a1; color: #2b2108; }
+
+
+.overlay {
+    z-index: 5;
+    display: flex;
+    align-items: safe center;
+    justify-content: center;
+    padding: 0.75rem;
+    overflow: auto;
+    background: rgba(20, 16, 14, 0.62);
+}
+  
+.sheet {
+    width: min(100%, 280px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background: var(--paper-2);
+    color: var(--ink);
+    text-align: center;
+}
+  
+.sheet__message {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+  
+.sheet__score {
+    margin: -0.25rem 0 0;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+  
+#save-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    text-align: left;
+}
+  
+.sheet input {
+    width: 100%;
+    padding: 0.72rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid #d9d0c0;
+    background: #fff;
+    color: var(--ink);
+}
+  
+.sheet .btn {
+    width: 100%;
+}
+  
+.form-error {
+    margin: 0;
+    color: var(--red);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
