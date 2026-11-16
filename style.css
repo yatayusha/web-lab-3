@@ -72,3 +72,95 @@ button {
     min-width: 0;
 }
 
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+h1 {
+    margin: 0;
+    font-family: "Unbounded", "Manrope", sans-serif;
+    font-size: clamp(4rem, 8vw, 5.6rem);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+}
+  
+h1 span {
+    color: var(--red);
+}
+  
+.lede,
+.hint,
+.rules p,
+.empty {
+    color: var(--muted);
+    line-height: 1.45;
+}
+  
+.lede {
+    margin: 0.7rem 0 0;
+    max-width: 36ch;
+    font-size: 1.02rem;
+}
+
+.scores {
+    display: flex;
+    gap: 0.6rem;
+  }
+  
+  .score {
+    position: relative;
+    min-width: 6.4rem;
+    margin: 0;
+    padding: 0.45rem 0.85rem 0.55rem;
+    border-radius: 16px;
+    background: transparent;
+    border: 1px solid var(--line);
+  }
+  
+  .score span,
+  .sheet label,
+  .table th {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  
+  .score span,
+  .sheet label {
+    display: block;
+  }
+  
+  .score strong {
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  
+  .score--current {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  
+  .score--current span {
+    color: #c8bfb2;
+  }
+  
+  .score--current strong {
+    color: #f6f1e7;
+  }
+  
+  .score.is-live strong {
+    color: var(--red);
+  }
+  
+  .score--current.is-live strong {
+    color: #ffb4a6;
+  }
+
