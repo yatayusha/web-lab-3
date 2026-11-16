@@ -1,0 +1,74 @@
+:root {
+    --paper: #e9e1d1;
+    --paper-2: #f6f1e7;
+    --ink: #1a1714;
+    --muted: #6f675e;
+    --line: #ddd3c3;
+    --red: #d94a32;
+    --board: #221e1a;
+    --cell: #322c27;
+    --gap: 12px;
+    --radius: 22px;
+    color-scheme: light;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 0% -10%, rgba(217, 74, 50, 0.14), transparent 55%),
+      radial-gradient(700px 380px at 100% 0%, rgba(18, 181, 164, 0.12), transparent 50%),
+      var(--paper);
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+  
+.app {
+    width: min(1080px, 100%);
+    margin: 0 auto;
+    padding: 1.6rem 1.2rem 2.4rem;
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(280px, 460px);
+    gap: 2.4rem 3rem;
+    align-items: center;
+}
+  
+.panel,
+.stage {
+    min-width: 0;
+}
+
