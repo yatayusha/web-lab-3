@@ -290,5 +290,4 @@
         tileCount: tileCount,
         emptyCells: emptyCells,
     };
-
-  });
+});

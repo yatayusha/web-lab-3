@@ -107,9 +107,9 @@ h1 span {
 .scores {
     display: flex;
     gap: 0.6rem;
-  }
+}
   
-  .score {
+.score {
     position: relative;
     min-width: 6.4rem;
     margin: 0;
@@ -117,50 +117,183 @@ h1 span {
     border-radius: 16px;
     background: transparent;
     border: 1px solid var(--line);
-  }
+}
   
-  .score span,
-  .sheet label,
-  .table th {
+.score span,
+.sheet label,
+.table th {
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
-  }
+}
   
-  .score span,
-  .sheet label {
+.score span,
+.sheet label {
     display: block;
-  }
+}
   
-  .score strong {
+.score strong {
     display: block;
     margin-top: 0.1rem;
     font-size: 1.45rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
-  }
+}
   
-  .score--current {
+.score--current {
     background: var(--ink);
     border-color: var(--ink);
-  }
+}
   
-  .score--current span {
+.score--current span {
     color: #c8bfb2;
-  }
+}
   
-  .score--current strong {
+.score--current strong {
     color: #f6f1e7;
-  }
+}
   
-  .score.is-live strong {
+.score.is-live strong {
     color: var(--red);
+}
+  
+.score--current.is-live strong {
+    color: #ffb4a6;
+}
+
+.gain {
+    position: absolute;
+    left: 50%;
+    top: -0.15rem;
+    font-weight: 800;
+    color: var(--red);
+    pointer-events: none;
+    transform: translate(-50%, 0);
+    animation: float-up 700ms ease forwards;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+  
+.btn,
+.dpad button,
+.icon-btn {
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    font-weight: 800;
+}
+
+.btn:hover,
+.dpad button:hover,
+.icon-btn:hover {
+  background: rgba(26, 23, 20, 0.06);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper-2);
+}
+
+.btn--primary:hover {
+  background: #322c27;
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.storage-note {
+  margin: 0.7rem 0 0;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.rules {
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.rules summary {
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.rules p {
+  margin: 0.45rem 0 0;
+}
+
+.hint {
+  margin: 0.85rem 0 0;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+
+.board {
+    position: relative;
+    width: min(100%, 460px, 74vh);
+    margin-inline: auto;
+    aspect-ratio: 1;
+    border-radius: 28px;
+    background: var(--board);
+    box-shadow: 0 24px 50px rgba(34, 30, 26, 0.18);
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
   }
   
-  .score--current.is-live strong {
-    color: #ffb4a6;
-  }
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    padding: var(--gap);
+}
+  
+.cell {
+    border-radius: 14px;
+    background: var(--cell);
+}
 
+
+.tiles,
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.tile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tile__face {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  font-size: clamp(1.35rem, 5.5vw, 2rem);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
